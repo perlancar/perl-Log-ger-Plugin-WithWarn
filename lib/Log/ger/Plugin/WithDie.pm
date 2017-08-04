@@ -62,23 +62,25 @@ sub get_hooks {
 }
 
 1;
-# ABSTRACT: Add *_warn logging routines
+# ABSTRACT: Add *_die logging routines
 
 =for Pod::Coverage ^(.+)$
 
 =head1 SYNOPSIS
 
- use Log::ger::Plugin 'WithWarn';
+ use Log::ger::Plugin 'WithDie';
  use Log::ger;
  my $log = Log::ger->get_logger;
 
 These subroutines will also become available:
 
- log_warn_warn("blah!"); # in addition to log, will also warn()
+ log_error_die("blah!"); # in addition to log, will also die()
+ log_fatal_die("blah!"); # in addition to log, will also die()
 
 These logging methods will also become available:
 
- $log->warn_warn("blah!"); # in addition to log, will also warn()
+ $log->error_die("blah!"); # in addition to log, will also die()
+ $log->fatal_die("blah!"); # in addition to log, will also die()
 
 
 =head1 DESCRIPTION
@@ -86,6 +88,6 @@ These logging methods will also become available:
 
 =head1 SEE ALSO
 
-L<Log::ger::Plugin::WithDie>
+L<Log::ger::Plugin::WithWarn>
 
 L<Log::ger::Plugin::WithCarp>

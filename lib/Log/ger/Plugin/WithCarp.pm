@@ -63,23 +63,33 @@ sub get_hooks {
 }
 
 1;
-# ABSTRACT: Add *_warn logging routines
+# ABSTRACT: Add *_{carp,cluck,croak,confess} logging routines
 
 =for Pod::Coverage ^(.+)$
 
 =head1 SYNOPSIS
 
- use Log::ger::Plugin 'WithWarn';
+ use Log::ger::Plugin 'WithCarp';
  use Log::ger;
  my $log = Log::ger->get_logger;
 
 These subroutines will also become available:
 
- log_warn_warn("blah!"); # in addition to log, will also warn()
+ log_warn_carp    ("blah!"); # in addition to log, will also carp()
+ log_warn_cluck   ("blah!"); # in addition to log, will also cluck()
+ log_error_croak  ("blah!"); # in addition to log, will also croak()
+ log_error_confess("blah!"); # in addition to log, will also confess()
+ log_fatal_croak  ("blah!"); # in addition to log, will also croak()
+ log_fatal_confess("blah!"); # in addition to log, will also confess()
 
 These logging methods will also become available:
 
- $log->warn_warn("blah!"); # in addition to log, will also warn()
+ $log->warn_carp    ("blah!"); # in addition to log, will also carp()
+ $log->warn_cluck   ("blah!"); # in addition to log, will also cluck()
+ $log->error_croak  ("blah!"); # in addition to log, will also croak()
+ $log->error_confess("blah!"); # in addition to log, will also confess()
+ $log->fatal_croak  ("blah!"); # in addition to log, will also croak()
+ $log->fatal_confess("blah!"); # in addition to log, will also confess()
 
 
 =head1 DESCRIPTION
@@ -87,6 +97,6 @@ These logging methods will also become available:
 
 =head1 SEE ALSO
 
-L<Log::ger::Plugin::WithDie>
+L<Log::ger::Plugin::WithWarn>
 
-L<Log::ger::Plugin::WithCarp>
+L<Log::ger::Plugin::WithDie>
