@@ -89,3 +89,5 @@ These logging methods will also become available:
 L<Log::ger::Plugin::WithDie>
 
 L<Log::ger::Plugin::WithCarp>
+
+L<Log::ger::Plugin::Log4perl>
